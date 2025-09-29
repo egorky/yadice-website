@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - YaDice!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="../index.html">
+                    <img src="../assets/images/logo.svg" alt="YaDice! Logo">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="../index.html" class="navbar-item">Inicio</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="text-bots/index.html" class="navbar-link">Bots de Texto</a>
+                        <div class="navbar-dropdown">
+                            <a href="text-bots/surveys.html" class="navbar-item">Encuestas Automatizadas</a>
+                            <a href="text-bots/help-desk.html" class="navbar-item">Mesa de Ayuda</a>
+                            <a href="text-bots/faq-bot.html" class="navbar-item">Asistente Virtual (FAQ)</a>
+                            <a href="text-bots/internal-services.html" class="navbar-item">Servicios Internos</a>
+                            <a href="text-bots/ecommerce-assistant.html" class="navbar-item">Asistente E-commerce</a>
+                            <a href="text-bots/lead-generation.html" class="navbar-item">Captación de Leads</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="voice-bots/index.html" class="navbar-link">Bots de Voz</a>
+                        <div class="navbar-dropdown">
+                            <a href="voice-bots/appointment-scheduling.html" class="navbar-item">Agendamiento de Citas</a>
+                            <a href="voice-bots/outbound-surveys.html" class="navbar-item">Encuestas Salientes</a>
+                            <a href="voice-bots/information-provider.html" class="navbar-item">Información Automatizada</a>
+                            <a href="voice-bots/appointment-confirmation.html" class="navbar-item">Confirmación de Citas</a>
+                            <a href="voice-bots/intelligent-routing.html" class="navbar-item">Enrutamiento Inteligente</a>
+                            <a href="voice-bots/debt-collection.html" class="navbar-item">Gestión de Cobranza</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="industries/index.html" class="navbar-link">Industrias</a>
+                         <div class="navbar-dropdown">
+                            <a href="industries/health.html" class="navbar-item">Salud</a>
+                            <a href="industries/finance.html" class="navbar-item">Banca y Finanzas</a>
+                            <a href="industries/retail.html" class="navbar-item">Retail y E-commerce</a>
+                        </div>
+                    </div>
+                    <a href="demo.html" class="navbar-item">Demo</a>
+                    <a href="about.html" class="navbar-item">Nosotros</a>
+                    <a href="contact.html" class="navbar-item button is-primary is-active">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-2 page-title">Hablemos</h1>
+            <p class="subtitle">Estamos aquí para ayudarte a transformar tu comunicación. Completa el formulario y nos pondremos en contacto a la brevedad.</p>
+
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <form action="#" method="POST">
+                        <div class="field">
+                            <label class="label">Nombre Completo</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Ej: Ana Livia" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Correo Electrónico</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="Ej: ana.livia@empresa.com" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Nombre de la Empresa</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Ej: Empresa S.A.">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">¿En qué solución estás interesado?</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select>
+                                        <option>Bots de Texto</option>
+                                        <option>Bots de Voz</option>
+                                        <option>Ambos</option>
+                                        <option>No estoy seguro</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Mensaje</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Cuéntanos un poco sobre tus necesidades..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary is-fullwidth is-large">Enviar Mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-4">Información de Contacto</p>
+                            <p class="subtitle is-6">También puedes encontrarnos aquí:</p>
+
+                            <p><strong><i class="fas fa-envelope"></i> Email:</strong><br><a href="mailto:contacto@yadice.com">contacto@yadice.com</a></p>
+                            <br>
+                            <p><strong><i class="fas fa-phone"></i> Teléfono:</strong><br><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                            <br>
+                            <p><strong><i class="fas fa-map-marker-alt"></i> Oficina:</strong><br>Av. Principal 123, Piso 10<br>Ciudad Tecnológica, LATAM</p>
+                            <hr>
+                            <p class="title is-5">Síguenos en Redes</p>
+                            <div class="buttons">
+                                <a class="button is-medium is-linkedin" href="#"><span class="icon"><i class="fab fa-linkedin"></i></span></a>
+                                <a class="button is-medium is-twitter" href="#"><span class="icon"><i class="fab fa-twitter"></i></span></a>
+                                <a class="button is-medium is-facebook" href="#"><span class="icon"><i class="fab fa-facebook"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="has-text-centered">&copy; 2024 YaDice!. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JS for mobile navbar
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
