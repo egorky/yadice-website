@@ -3,7 +3,7 @@
 Este repositorio contiene dos componentes principales:
 
 1.  **Bot de Voz con IA (`/`)**: Una aplicación Next.js que alimenta el bot de voz conversacional.
-2.  **Sitio Web Corporativo (`/website-1`)**: Un sitio web estático que sirve como la cara pública de la empresa YaDice!.
+2.  **Sitio Web Corporativo (`/`)**: Un sitio web estático que sirve como la cara pública de la empresa YaDice!.
 
 ## Entorno de Desarrollo Unificado
 
@@ -51,6 +51,6 @@ Puedes abrir el archivo `website-1/index.html` directamente en tu navegador web.
 
 Si tienes Node.js instalado, puedes usar el paquete `serve`:
 ```bash
-npx serve website-1
+npx serve ./
 ```
 Esto levantará el sitio en una URL local, típicamente `http://localhost:3001`.
