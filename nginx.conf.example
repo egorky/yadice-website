@@ -1,0 +1,61 @@
+# Sample NGINX configuration for YaDice!
+#
+# This configuration serves a static website from the root and
+# proxies requests for /demo to a Next.js application running on port 3000.
+#
+# HOW TO USE:
+# 1. Copy this file to your NGINX configuration directory (e.g., /etc/nginx/sites-available/yadice).
+# 2. Replace `your_domain.com` with your actual domain name.
+# 3. Replace `/path/to/your/project/root` with the absolute path to this repository's root directory.
+# 4. If you have an SSL certificate (recommended), uncomment the SSL sections and provide the correct paths.
+# 5. Create a symbolic link: `sudo ln -s /etc/nginx/sites-available/yadice /etc/nginx/sites-enabled/`
+# 6. Test the configuration: `sudo nginx -t`
+# 7. Reload NGINX: `sudo systemctl reload nginx`
+
+server {
+    listen 80;
+    server_name your_domain.com; # <-- IMPORTANT: Replace with your domain
+
+    # For security, redirect all HTTP traffic to HTTPS
+    # return 301 https://$host$request_uri;
+
+    # If you don't have a domain yet, you can comment the lines above
+    # and just serve on port 80.
+}
+
+server {
+    # listen 443 ssl; # Uncomment for HTTPS
+    # server_name your_domain.com; # <-- IMPORTANT: Replace with your domain
+
+    # ssl_certificate /path/to/your/fullchain.pem; # <-- Path to your SSL certificate
+    # ssl_certificate_key /path/to/your/privkey.pem; # <-- Path to your SSL private key
+
+    # Include modern SSL/TLS settings
+    # include snippets/ssl-params.conf;
+
+    root /path/to/your/project/root; # <-- IMPORTANT: Replace with the absolute path to your project
+    index index.html;
+
+    # Location block for the static website files
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Location block for the Next.js virtual agent demo
+    # The basePath "/demo" in next.config.js matches this location.
+    location /demo/ {
+        proxy_pass http://localhost:3000/demo/; # Forward requests to the Next.js app
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Optional: Add error pages for a better user experience
+    error_page 404 /404.html; # You would need to create a 404.html page
+    error_page 500 502 503 504 /50x.html; # And a 50x.html page
+}

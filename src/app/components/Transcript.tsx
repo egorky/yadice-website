@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { TranscriptItem } from "@/app/types";
 // Image import no es necesario si PaperPlaneIcon es de Radix y no una imagen SVG local.
 // import Image from "next/image";
 import { useTranscript } from "@/app/contexts/TranscriptContext";

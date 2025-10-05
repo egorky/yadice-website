@@ -19,7 +19,7 @@ import { useRealtimeSession } from "@/app/hooks/useRealtimeSession";
 import { createModerationGuardrail } from "@/app/agentConfigs/guardrails";
 
 // Agent configs
-import { allAgentSets, defaultAgentSetKey } from "@/app/agentConfigs";
+import { defaultAgentSetKey } from "@/app/agentConfigs";
 // Import all scenarios available to the supervisor
 
 // At the top of src/app/supervisor/page.tsx or in a relevant types file
@@ -33,7 +33,7 @@ interface SimpleToolDefinition {
   description?: string;
   parameters?: object; // JSON schema
 }
-import { supervisorSdkScenarioMap, defaultAgentSetKey as globalDefaultAgentSetKey } from "@/app/agentConfigs"; // Import the shared map
+import { supervisorSdkScenarioMap } from "@/app/agentConfigs"; // Import the shared map
 
 
 import { useHandleSessionHistory } from "@/app/hooks/useHandleSessionHistory";
@@ -54,12 +54,12 @@ function SupervisorApp() {
   // const [editableMetaprompt, setEditableMetaprompt] = useState<string>(""); // DUPLICATE - REMOVED
   // const [originalMetaprompt, setOriginalMetaprompt] = useState<string>(""); // REMOVED - Settings page handles its own original/reset logic
   const [editableAgentSpecificTexts, setEditableAgentSpecificTexts] = useState<EditableAgentTexts | null>(null);
-  const [originalAgentSpecificTexts, setOriginalAgentSpecificTexts] = useState<EditableAgentTexts | null>(null);
+  const [, setOriginalAgentSpecificTexts] = useState<EditableAgentTexts | null>(null);
   const [currentAgentTools, setCurrentAgentTools] = useState<SimpleToolDefinition[] | null>(null);
 
   // State for managing scenarios in supervisor UI
   // Initialize from localStorage or fallback to supervisorSdkScenarioMap
-  const [editableScenarios, setEditableScenarios] = useState<Record<string, { scenario: RealtimeAgent[], companyName: string, displayName: string }>>(() => {
+  const [editableScenarios] = useState<Record<string, { scenario: RealtimeAgent[], companyName: string, displayName: string }>>(() => {
     if (typeof window !== 'undefined') {
       const storedScenarios = localStorage.getItem("supervisorCustomScenarios");
       if (storedScenarios) {
@@ -74,7 +74,7 @@ function SupervisorApp() {
   });
 
   // State for metaprompt - load from localStorage or use default
-  const [editableMetaprompt, setEditableMetaprompt] = useState<string>(() => {
+  const [editableMetaprompt] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const storedMetaprompt = localStorage.getItem("supervisorCustomMetaprompt");
       if (storedMetaprompt) {
@@ -122,7 +122,7 @@ function SupervisorApp() {
     connect,
     disconnect,
     sendEvent, // Supervisor doesn't send user text or PTT, but might send other events if needed
-    interrupt, // Supervisor might want to interrupt an agent
+    // interrupt, // Supervisor might want to interrupt an agent
     mute, // Supervisor can mute their listening audio
   } = useRealtimeSession({
     onConnectionChange: (s) => setSessionStatus(s as SessionStatus),
@@ -137,7 +137,7 @@ function SupervisorApp() {
 
   const [sessionStatus, setSessionStatus] = useState<SessionStatus>("DISCONNECTED");
   // For supervisor, logs are central, usually always expanded.
-  const [isEventsPaneExpanded, setIsEventsPaneExpanded] = useState<boolean>(() => {
+  const [isEventsPaneExpanded] = useState<boolean>(() => {
       if (typeof window === 'undefined') return true;
       const stored = localStorage.getItem('supervisorLogsExpanded');
       return stored ? stored === 'true' : true; // Default to true for supervisor
@@ -283,7 +283,7 @@ function SupervisorApp() {
 
       console.log("[Supervisor Connect] Original scenarioDetails.scenario:", JSON.stringify(scenarioDetails.scenario, null, 2));
 
-      let processedAgents = scenarioDetails.scenario
+      const processedAgents = scenarioDetails.scenario
         .filter(agent => {
           const isValid = agent && typeof agent === 'object';
           if (!isValid) console.warn("[Supervisor Connect] Filtering out invalid agent object:", agent);
@@ -294,7 +294,7 @@ function SupervisorApp() {
           // Ensure originalAgentConfig is not null and is an object, though filter should handle null/undefined
           // The filter above should ensure originalAgentConfig is an object here.
 
-          let modifiedAgentConfig = { ...originalAgentConfig } as RealtimeAgent; // Cast to RealtimeAgent
+          const modifiedAgentConfig = { ...originalAgentConfig } as RealtimeAgent; // Cast to RealtimeAgent
 
           // Apply agent-specific overrides for greeting and instructions
           if (modifiedAgentConfig.name === currentAgentName && editableAgentSpecificTexts) {
@@ -481,8 +481,8 @@ function SupervisorApp() {
     }
      try {
       mute(!isAudioPlaybackEnabled); // SDK mute for supervisor's audio feed
-    } catch (err) {
-      // console.warn('Supervisor: Failed to toggle SDK mute state', err);
+    } catch (_err) {
+      // console.warn('Supervisor: Failed to toggle SDK mute state', _err);
     }
   }, [isAudioPlaybackEnabled, sessionStatus]);
 

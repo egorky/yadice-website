@@ -123,7 +123,7 @@ const SupervisorControls: React.FC<SupervisorControlsProps> = ({
         </label>
       </div>
       <p className="text-xs text-gray-400 px-2 pb-1">
-        Nota: El botón "Connect" inicia una sesión de monitoreo/prueba con la configuración de IA seleccionada. No es para conversar como cliente.
+        Nota: El botón &quot;Connect&quot; inicia una sesión de monitoreo/prueba con la configuración de IA seleccionada. No es para conversar como cliente.
       </p>
 
       <div className="my-2 p-3 bg-gray-600 rounded-md shadow">

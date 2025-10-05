@@ -466,8 +466,8 @@ function ClientApp() {
     if (audioElementRef.current) {
       audioElementRef.current.muted = !isAudioPlaybackEnabled;
       if (isAudioPlaybackEnabled && sessionStatus === "CONNECTED") { // Only play if connected
-        audioElementRef.current.play().catch((err) => {
-          // console.warn("Client: Autoplay may be blocked by browser:", err);
+        audioElementRef.current.play().catch((_err) => {
+          // console.warn("Client: Autoplay may be blocked by browser:", _err);
         });
       } else {
         audioElementRef.current.pause();
@@ -475,8 +475,8 @@ function ClientApp() {
     }
     try {
       mute(!isAudioPlaybackEnabled); // SDK mute
-    } catch (err) {
-      // console.warn('Client: Failed to toggle SDK mute state', err);
+    } catch (_err) {
+      // console.warn('Client: Failed to toggle SDK mute state', _err);
     }
   }, [isAudioPlaybackEnabled, sessionStatus]);
 
