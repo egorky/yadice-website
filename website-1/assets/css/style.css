@@ -1,0 +1,106 @@
+/* Custom Styles for YaDice! */
+
+:root {
+    --primary-color: #FF6B6B; /* A vibrant pink/coral for accents */
+    --light-pink: #FFF0F5; /* LavenderBlush - very light pink */
+    --light-gray: #F5F5F5; /* WhiteSmoke - light gray */
+    --text-color: #363636; /* Bulma's default text color */
+    --link-color: #3273dc; /* Bulma's default link color */
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.navbar-item img {
+    max-height: 3rem;
+}
+
+.navbar-item, .navbar-link {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.navbar-item:hover, .navbar-link:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+.hero.is-primary {
+    background-color: var(--light-pink);
+    color: var(--text-color);
+}
+
+.hero.is-primary .title,
+.hero.is-primary .subtitle {
+    color: var(--text-color);
+}
+
+.button.is-primary {
+    background-color: var(--primary-color);
+    border-color: transparent;
+}
+
+.button.is-primary:hover {
+    background-color: #ff4d4d;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 1.5rem 4rem;
+}
+
+.footer a {
+    color: var(--light-pink);
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.page-title {
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    padding: 10px 0 10px 25px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.feature-list li:before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}

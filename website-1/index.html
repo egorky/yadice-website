@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaDice! - Agentes Virtuales de Voz y Texto con IA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="assets/images/logo.svg" alt="YaDice! Logo">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="index.html" class="navbar-item is-active">Inicio</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="pages/text-bots/index.html" class="navbar-link">Agentes de Texto</a>
+                        <div class="navbar-dropdown">
+                            <a href="pages/text-bots/surveys.html" class="navbar-item">Encuestas Automatizadas</a>
+                            <a href="pages/text-bots/help-desk.html" class="navbar-item">Mesa de Ayuda</a>
+                            <a href="pages/text-bots/faq-bot.html" class="navbar-item">Asistente Virtual (FAQ)</a>
+                            <a href="pages/text-bots/internal-services.html" class="navbar-item">Servicios Internos</a>
+                            <a href="pages/text-bots/ecommerce-assistant.html" class="navbar-item">Asistente E-commerce</a>
+                            <a href="pages/text-bots/lead-generation.html" class="navbar-item">Captación de Leads</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="pages/voice-bots/index.html" class="navbar-link">Agentes de Voz</a>
+                        <div class="navbar-dropdown">
+                            <a href="pages/voice-bots/appointment-scheduling.html" class="navbar-item">Agendamiento de Citas</a>
+                            <a href="pages/voice-bots/outbound-surveys.html" class="navbar-item">Encuestas Salientes</a>
+                            <a href="pages/voice-bots/information-provider.html" class="navbar-item">Información Automatizada</a>
+                            <a href="pages/voice-bots/appointment-confirmation.html" class="navbar-item">Confirmación de Citas</a>
+                            <a href="pages/voice-bots/intelligent-routing.html" class="navbar-item">Enrutamiento Inteligente</a>
+                            <a href="pages/voice-bots/debt-collection.html" class="navbar-item">Gestión de Cobranza</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="pages/industries/index.html" class="navbar-link">Industrias</a>
+                         <div class="navbar-dropdown">
+                            <a href="pages/industries/health.html" class="navbar-item">Salud</a>
+                            <a href="pages/industries/finance.html" class="navbar-item">Banca y Finanzas</a>
+                            <a href="pages/industries/retail.html" class="navbar-item">Retail y E-commerce</a>
+                        </div>
+                    </div>
+                    <a href="pages/demo.html" class="navbar-item">Demo</a>
+                    <a href="pages/about.html" class="navbar-item">Nosotros</a>
+                    <a href="pages/contact.html" class="navbar-item button is-primary">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-primary is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1">
+                    Conversaciones Inteligentes, Resultados Reales
+                </h1>
+                <h2 class="subtitle is-3">
+                    Automatiza, asiste y crece con los Agentes Virtuales de IA de YaDice! para voz y texto.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-2 section-title">Nuestras Soluciones</h2>
+            <div class="columns is-multiline">
+
+                <!-- Text Agents -->
+                <div class="column is-half">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Agentes Virtuales de Texto</p>
+                                    <p class="subtitle is-6">WhatsApp y Web</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Interactúa con tus clientes donde ellos están. Nuestros agentes de texto ofrecen respuestas instantáneas, gestionan solicitudes y capturan datos valiosos 24/7.
+                                <br><br>
+                                <a href="pages/text-bots/index.html" class="button is-link is-outlined">Ver soluciones de texto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Agents -->
+                <div class="column is-half">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Agentes Virtuales de Voz</p>
+                                    <p class="subtitle is-6">Llamadas Inteligentes</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Ofrece una experiencia de voz humana y eficiente. Nuestros agentes de voz pueden agendar citas, realizar encuestas, confirmar información y mucho más.
+                                <br><br>
+                                <a href="pages/voice-bots/index.html" class="button is-link is-outlined">Ver soluciones de voz</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="section has-background-white">
+        <div class="container">
+            <h2 class="title is-2 section-title">Potenciados por Inteligencia Artificial de Vanguardia</h2>
+            <div class="columns is-vcentered">
+                <div class="column is-half">
+                    <div class="content">
+                        <p>En YaDice!, no solo creamos flujos de conversación; construimos cerebros digitales. Cada agente virtual está impulsado por modelos avanzados de Inteligencia Artificial que le permiten ir más allá de las respuestas predefinidas.</p>
+                        <h4 class="title is-5">¿Qué significa esto para ti?</h4>
+                        <ul>
+                            <li><strong>Comprensión del Lenguaje Natural (NLU):</strong> Nuestros agentes entienden la intención, el contexto y hasta los matices en las preguntas de los usuarios, permitiendo una conversación fluida y natural, no robótica.</li>
+                            <li><strong>Análisis de Sentimiento:</strong> Identifican la emoción detrás de las palabras (frustración, satisfacción, urgencia) para adaptar su tono y, si es necesario, escalar la conversación a un agente humano de forma prioritaria.</li>
+                            <li><strong>Aprendizaje Continuo:</strong> Cada interacción es una oportunidad de aprendizaje. Los agentes mejoran con el tiempo, identificando nuevas preguntas y optimizando sus respuestas para ser cada vez más eficientes.</li>
+                            <li><strong>Personalización Dinámica:</strong> Se integran con tus sistemas (CRM, ERP) para ofrecer respuestas personalizadas, utilizando el nombre del cliente, el historial de compras o el estado de sus solicitudes para una experiencia única.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column is-half has-text-centered">
+                    <figure class="image is-128x128 is-inline-block">
+                        <img src="https://em-content.zobj.net/source/apple/391/robot_1f916.png" alt="Icono de robot a cerebro">
+                    </figure>
+                    <p class="title is-1">🤖 &rarr; 🧠</p>
+                    <p class="subtitle">De simples respuestas a conversaciones inteligentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-third">
+                    <p class="title is-5 has-text-white">YaDice!</p>
+                    <p class="has-text-light">Potenciando la comunicación con inteligencia artificial.</p>
+                    <br>
+                    <p>&copy; 2024 YaDice!. Todos los derechos reservados.</p>
+                </div>
+                <div class="column">
+                    <p class="title is-5 has-text-white">Soluciones</p>
+                    <a href="pages/text-bots/index.html">Agentes de Texto</a><br>
+                    <a href="pages/voice-bots/index.html">Agentes de Voz</a><br>
+                    <a href="pages/industries/index.html">Industrias</a>
+                </div>
+                <div class="column">
+                    <p class="title is-5 has-text-white">Empresa</p>
+                    <a href="pages/about.html">Nosotros</a><br>
+                    <a href="pages/contact.html">Contacto</a><br>
+                    <a href="pages/demo.html">Prueba nuestro Demo</a>
+                </div>
+                <div class="column">
+                    <p class="title is-5 has-text-white">Redes Sociales</p>
+                    <a href="#">LinkedIn</a><br>
+                    <a href="#">Twitter (X)</a><br>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Bulma-specific JS for the mobile navbar
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicaciones por Industria - YaDice!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="../../index.html">
+                    <img src="../../assets/images/logo.svg" alt="YaDice! Logo">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="../../index.html" class="navbar-item">Inicio</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="../text-bots/index.html" class="navbar-link">Agentes de Texto</a>
+                        <div class="navbar-dropdown">
+                            <a href="../text-bots/surveys.html" class="navbar-item">Encuestas Automatizadas</a>
+                            <a href="../text-bots/help-desk.html" class="navbar-item">Mesa de Ayuda</a>
+                            <a href="../text-bots/faq-bot.html" class="navbar-item">Asistente Virtual (FAQ)</a>
+                            <a href="../text-bots/internal-services.html" class="navbar-item">Servicios Internos</a>
+                            <a href="../text-bots/ecommerce-assistant.html" class="navbar-item">Asistente E-commerce</a>
+                            <a href="../text-bots/lead-generation.html" class="navbar-item">Captación de Leads</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="../voice-bots/index.html" class="navbar-link">Agentes de Voz</a>
+                        <div class="navbar-dropdown">
+                            <a href="../voice-bots/appointment-scheduling.html" class="navbar-item">Agendamiento de Citas</a>
+                            <a href="../voice-bots/outbound-surveys.html" class="navbar-item">Encuestas Salientes</a>
+                            <a href="../voice-bots/information-provider.html" class="navbar-item">Información Automatizada</a>
+                            <a href="../voice-bots/appointment-confirmation.html" class="navbar-item">Confirmación de Citas</a>
+                            <a href="../voice-bots/intelligent-routing.html" class="navbar-item">Enrutamiento Inteligente</a>
+                            <a href="../voice-bots/debt-collection.html" class="navbar-item">Gestión de Cobranza</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="./index.html" class="navbar-link is-active">Industrias</a>
+                         <div class="navbar-dropdown">
+                            <a href="./health.html" class="navbar-item">Salud</a>
+                            <a href="./finance.html" class="navbar-item">Banca y Finanzas</a>
+                            <a href="./retail.html" class="navbar-item">Retail y E-commerce</a>
+                        </div>
+                    </div>
+                    <a href="../demo.html" class="navbar-item">Demo</a>
+                    <a href="../about.html" class="navbar-item">Nosotros</a>
+                    <a href="../contact.html" class="navbar-item button is-primary">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-2 page-title">Soluciones a la Medida de tu Industria</h1>
+            <p class="subtitle">Descubre cómo nuestros agentes virtuales de voz y texto se adaptan a los desafíos específicos de tu sector para generar un impacto real.</p>
+
+            <div class="columns is-multiline">
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-4">Salud</p>
+                            <div class="content">
+                                Agendamiento de citas médicas, recordatorios a pacientes, resolución de dudas sobre preparaciones de exámenes y más.
+                                <br><br>
+                                <a href="./health.html" class="button is-link is-outlined is-fullwidth">Ver aplicaciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-4">Banca y Finanzas</p>
+                            <div class="content">
+                                Consulta de saldos, recordatorios de pago, notificación de fraudes, captación de leads para créditos y seguros.
+                                <br><br>
+                                <a href="./finance.html" class="button is-link is-outlined is-fullwidth">Ver aplicaciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-4">Retail y E-commerce</p>
+                            <div class="content">
+                                Seguimiento de pedidos, atención al cliente post-venta, recuperación de carritos, recomendación de productos.
+                                <br><br>
+                                <a href="./retail.html" class="button is-link is-outlined is-fullwidth">Ver aplicaciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="has-text-centered">&copy; 2024 YaDice!. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Bulma-specific JS for the mobile navbar
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
