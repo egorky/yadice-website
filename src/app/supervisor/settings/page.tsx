@@ -1,18 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import type { RealtimeAgent } from '@openai/agents/realtime';
-import { supervisorSdkScenarioMap, defaultAgentSetKey } from "@/app/agentConfigs"; // Assuming these might be needed for initial state
+import { supervisorSdkScenarioMap } from "@/app/agentConfigs"; // Assuming these might be needed for initial state
 
 // TODO: Consider moving these to a shared types file if not already there
 interface SupervisorSdkScenario {
   scenario: RealtimeAgent[];
   companyName: string;
   displayName: string;
-}
-
-interface EditableAgentTexts { // If used by metaprompt or agent specific text editors moved here
-  greeting?: string;
-  instructions?: string;
 }
 
 // Placeholder for initial metaprompt, ideally loaded from a config or constants file
@@ -58,7 +53,7 @@ function SupervisorSettingsPage() {
     }
     return INITIAL_METAPROMPT_CONTENT;
   });
-  const [originalMetaprompt, setOriginalMetaprompt] = useState<string>(INITIAL_METAPROMPT_CONTENT); // Keep this for reset functionality on this page
+  const [_originalMetaprompt, setOriginalMetaprompt] = useState<string>(INITIAL_METAPROMPT_CONTENT); // Keep this for reset functionality on this page
 
   // AgentEditor Component
   const AgentEditor: React.FC<{ agent: RealtimeAgent, onChange: (updatedAgent: RealtimeAgent) => void, onDelete: () => void }> = ({ agent: initialAgent, onChange, onDelete }) => {
@@ -279,7 +274,7 @@ function SupervisorSettingsPage() {
           <button
             onClick={() => {
                 localStorage.setItem("supervisorCustomMetaprompt", editableMetaprompt);
-                alert("Metaprompt saved to local storage for next session on main dashboard.");
+                alert('Metaprompt saved to local storage for next session on main dashboard.');
             }}
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1.5 px-4 rounded-md text-sm"
           >
@@ -309,7 +304,7 @@ function SupervisorSettingsPage() {
                     </div>
                 </div>
             ))}
-            {Object.keys(editableScenarios).length === 0 && <p className="text-sm text-gray-400 italic">No scenarios defined. Click "Create New" to add one.</p>}
+            {Object.keys(editableScenarios).length === 0 && <p className="text-sm text-gray-400 italic">No scenarios defined. Click &quot;Create New&quot; to add one.</p>}
         </div>
       </section>
     </div>

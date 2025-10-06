@@ -89,8 +89,7 @@ Habla a un ritmo medio—constante y claro. Se pueden usar breves pausas para da
         required: ['phoneNumber'],
         additionalProperties: false,
       },
-      execute: async (input: any) => {
-        const { phoneNumber } = input as { phoneNumber: string };
+      execute: async (_input: any) => {
         return {
           orders: [
             {
@@ -161,7 +160,7 @@ Habla a un ritmo medio—constante y claro. Se pueden usar breves pausas para da
         required: ['region', 'itemCategory'],
         additionalProperties: false,
       },
-      execute: async (input: any) => {
+      execute: async (_input: any) => {
         // El texto de la política debe ser traducido
         return {
           policy: `
